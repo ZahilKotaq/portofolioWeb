@@ -1,0 +1,123 @@
+/* ==========================================================
+   skills.css — Skills / Resonance Section
+   ========================================================== */
+
+#skills { background: var(--color-bg-deep); }
+
+
+/* --- Grid --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+
+/* --- Card --- */
+.skill-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 24px) 0,
+    100% 24px,
+    100% 100%,
+    24px 100%,
+    0 calc(100% - 24px)
+  );
+  transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+/* Top-right chamfer triangle */
+.skill-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  border-color: transparent var(--color-cyan-dim) transparent transparent;
+  transition: border-color var(--transition-normal);
+}
+
+/* Hover glow overlay */
+.skill-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(77, 232, 212, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.skill-card:hover {
+  border-color: var(--color-cyan);
+  transform: translateY(-4px);
+}
+.skill-card:hover::before {
+  border-color: transparent var(--color-cyan) transparent transparent;
+}
+.skill-card:hover::after { opacity: 1; }
+
+
+/* --- Card Content --- */
+.skill-card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+.skill-card-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin-bottom: var(--space-xs) + 4px;
+}
+.skill-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--color-white-dim);
+  margin-bottom: 20px;
+}
+
+
+/* --- Skill Bar --- */
+.skill-bar-wrap {
+  background: rgba(255, 255, 255, 0.05);
+  height: 2px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-cyan-dim), var(--color-cyan));
+  border-radius: 1px;
+  width: 0;                     /* starts at 0, animated to --skill-level */
+  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  box-shadow: 0 0 8px var(--color-cyan);
+}
+
+/* Triggered by JS when card enters viewport */
+.skill-card.visible .skill-bar {
+  width: var(--skill-level);
+}
+
+.skill-level-text {
+  font-family: var(--font-hud);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan-dim);
+  margin-top: 6px;
+  text-align: right;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

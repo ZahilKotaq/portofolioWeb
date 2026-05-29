@@ -1,0 +1,146 @@
+/* ==========================================================
+   projects.css — Projects Section
+   ========================================================== */
+
+#projects {
+  background: linear-gradient(180deg, var(--color-bg-deep), var(--color-bg-navy));
+}
+
+
+/* --- Grid --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+
+/* --- Card --- */
+.project-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 30px) 0,
+    100% 30px,
+    100% 100%,
+    30px 100%,
+    0 calc(100% - 30px)
+  );
+  transition: border-color var(--transition-normal), transform 0.4s ease;
+}
+.project-card:hover {
+  border-color: rgba(77, 232, 212, 0.5);
+  transform: translateY(-6px);
+}
+
+
+/* --- Thumbnail --- */
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumb-bg {
+  position: absolute; inset: 0;
+  transition: transform 0.6s ease;
+}
+.project-card:hover .project-thumb-bg { transform: scale(1.05); }
+
+/* Color variants for each project card */
+.project-thumb-bg--blue   { background: linear-gradient(135deg, #0a1e40, #0d4a6e, #1a2a4a); }
+.project-thumb-bg--purple { background: linear-gradient(135deg, #1a0a2e, #2d0a4e, #1a1a2e); }
+.project-thumb-bg--green  { background: linear-gradient(135deg, #0a2e1a, #0a4e2d, #1a2e1a); }
+.project-thumb-bg--orange { background: linear-gradient(135deg, #2e1a0a, #4e2d0a, #2e2a1a); }
+
+.project-thumb-bg svg { opacity: 0.4; }
+
+.project-thumb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--glass-bg) 0%, transparent 60%);
+}
+.project-thumb-num {
+  position: absolute;
+  top: 16px; right: 20px;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(77, 232, 212, 0.08);
+  line-height: 1;
+}
+.project-type-badge {
+  position: absolute;
+  top: 16px; left: 16px;
+  font-family: var(--font-hud);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--color-bg-deepest);
+  background: var(--color-cyan);
+  padding: 4px 12px;
+  clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+
+/* --- Card Content --- */
+.project-content { padding: 28px; }
+
+.project-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  margin-bottom: 10px;
+  transition: color var(--transition-normal);
+}
+.project-card:hover .project-name { color: var(--color-cyan); }
+
+.project-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--color-white-dim);
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.project-tag {
+  font-family: var(--font-hud);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+.project-link {
+  font-family: var(--font-hud);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap var(--transition-normal), color var(--transition-normal);
+}
+.project-link::after { content: '→'; }
+.project-link:hover  { gap: 14px; }
+
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}

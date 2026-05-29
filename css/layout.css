@@ -1,0 +1,99 @@
+/* ==========================================================
+   layout.css — Nav & Footer
+   Komponen layout global yang ada di semua halaman.
+   ========================================================== */
+
+
+/* ---- Navigation ---- */
+#main-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-nav);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(1, 5, 8, 0.9) 0%, transparent 100%);
+  backdrop-filter: blur(4px);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--color-cyan);
+  text-shadow: 0 0 20px rgba(77, 232, 212, 0.6);
+}
+.nav-logo span {
+  color: var(--color-gold);
+  text-shadow: 0 0 20px rgba(200, 169, 110, 0.6);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+.nav-links a {
+  font-family: var(--font-hud);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-white-dim);
+  text-transform: uppercase;
+  transition: color var(--transition-normal), text-shadow var(--transition-normal);
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--color-cyan);
+  transition: width var(--transition-normal);
+}
+.nav-links a:hover,
+.nav-links a.is-active {
+  color: var(--color-cyan);
+  text-shadow: 0 0 12px var(--color-cyan);
+}
+.nav-links a:hover::after,
+.nav-links a.is-active::after { width: 100%; }
+
+
+/* ---- Footer ---- */
+#main-footer {
+  position: relative;
+  z-index: var(--z-content);
+  padding: 30px var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--glass-border);
+  background: var(--color-bg-deepest);
+}
+#main-footer p {
+  font-family: var(--font-hud);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--color-white-dim);
+  text-transform: uppercase;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--color-cyan-dim);
+}
+
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  #main-nav  { padding: 20px 30px; }
+  .nav-links { display: none; }
+  #main-footer {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}

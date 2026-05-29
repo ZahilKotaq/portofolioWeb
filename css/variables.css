@@ -1,0 +1,58 @@
+/* ==========================================================
+   variables.css — Design Tokens
+   Semua nilai dasar (warna, font, spacing) ada di sini.
+   Kalau mau ganti tema/warna, cukup edit file ini saja.
+   ========================================================== */
+
+:root {
+  /* --- Color Palette --- */
+  --color-bg-deepest:  #010508;
+  --color-bg-deep:     #040d14;
+  --color-bg-navy:     #071525;
+  --color-bg-teal:     #0a1e2e;
+
+  --color-cyan:        #4de8d4;
+  --color-cyan-bright: #00fff0;
+  --color-cyan-dim:    #1a6b63;
+
+  --color-gold:        #c8a96e;
+  --color-gold-bright: #f0d080;
+
+  --color-white:       #e8f4f8;
+  --color-white-dim:   #a0c4cc;
+
+  /* --- Glassmorphism --- */
+  --glass-bg:          rgba(4, 20, 35, 0.6);
+  --glass-bg-hover:    rgba(4, 30, 50, 0.8);
+  --glass-border:      rgba(77, 232, 212, 0.15);
+
+  /* --- Typography --- */
+  --font-display: 'Cinzel', serif;
+  --font-hud:     'Orbitron', monospace;
+  --font-body:    'Raleway', sans-serif;
+
+  /* --- Spacing Scale --- */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  60px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+
+  /* --- Border Radius --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* --- Transitions --- */
+  --transition-fast:   0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow:   0.6s ease;
+
+  /* --- Z-index Scale --- */
+  --z-canvas:   0;
+  --z-content:  1;
+  --z-nav:      100;
+  --z-overlay:  200;
+  --z-cursor:   9999;
+}

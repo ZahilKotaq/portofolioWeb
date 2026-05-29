@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahel | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS: Design tokens & Base -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+
+  <!-- CSS: Shared Components -->
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+
+  <!-- CSS: Sections -->
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- Noise Overlay -->
+  <div id="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-outer" aria-hidden="true"></div>
+  <div id="cursor-inner" aria-hidden="true"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">Zahil<span>∿</span>Kotaq</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-radial"  aria-hidden="true"></div>
+    <div class="hero-scan-line" aria-hidden="true"></div>
+
+    <p class="hero-eyebrow">◈ Developer adn Designer ◈</p>
+    <h1 class="hero-name">Muhammad Sahel Satriyo</h1>
+    <div class="hero-title-line" aria-hidden="true"></div>
+    <p class="hero-subtitle">Electrical Engineer & Web Developer</p>
+    <p class="hero-desc">
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#projects" class="btn-primary">Lihat Karya</a>
+      <a href="#contact"  class="btn-secondary">Hubungi Saya</a>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-arrow"><div class="scroll-dot"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" aria-label="About me">
+    <div class="section-container">
+      <div class="about-grid">
+
+        <!-- Avatar Column -->
+        <div class="about-avatar-wrap reveal">
+          <div class="about-avatar-frame">
+            <div class="avatar-placeholder" aria-label="Profile photo placeholder">
+            <img src="suisei.jpg" alt="My Istri Gwejh" class="about-avatar" />
+            </div>
+          </div>
+          <div class="about-corner about-corner-tl" aria-hidden="true"></div>
+          <div class="about-corner about-corner-br" aria-hidden="true"></div>
+
+          <div class="about-stats">
+            <div class="stat-box">
+              <span class="stat-num"></span>
+              <span class="stat-label"></span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num"></span>
+              <span class="stat-label"></span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num"></span>
+              <span class="stat-label"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="about-content reveal">
+          <p class="section-eyebrow">Tentang Saya</p>
+          <h2 class="section-title">Siapa <br/>Saya?</h2>
+          <p class="about-bio">
+            Halo! Saya adalah seorang mahasiswa Teknik Elektro Universitas Sultan Ageng Tirtayasa. 
+          </p>
+          <p class="about-bio">
+            Saya memiliki minat yang besar dalam pengembangan web dan desain UI/UX. 
+            Dengan minat dan belajar secara otodidak, saya akan terus mengasah kemampuan saya untuk menciptakan solusi digital yang inovatif dan berdampak.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">UI/UX</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Next.js</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" aria-label="Skills">
+    <div class="section-container">
+      <p class="section-eyebrow reveal">Kemampuan</p>
+      <h2 class="section-title reveal">Resonansi<br/>Teknologi</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal" style="--skill-level: 90%">
+          <span class="skill-card-icon" aria-hidden="true">⚡</span>
+          <div class="skill-card-name">Frontend Dev</div>
+          <p class="skill-card-desc">React, Vue, Next.js dengan CSS modern — membangun antarmuka yang cepat, responsif, dan memukau.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">90% Proficiency</div>
+        </div>
+
+        <div class="skill-card reveal" style="--skill-level: 82%">
+          <span class="skill-card-icon" aria-hidden="true">⚙️</span>
+          <div class="skill-card-name">Backend Dev</div>
+          <p class="skill-card-desc">Node.js, Express, REST & GraphQL API — arsitektur yang skalabel dan aman untuk kebutuhan apapun.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">82% Proficiency</div>
+        </div>
+
+        <div class="skill-card reveal" style="--skill-level: 78%">
+          <span class="skill-card-icon" aria-hidden="true">🗄️</span>
+          <div class="skill-card-name">Database</div>
+          <p class="skill-card-desc">PostgreSQL, MongoDB, Redis — manajemen data yang efisien dengan query yang teroptimasi.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">78% Proficiency</div>
+        </div>
+
+        <div class="skill-card reveal" style="--skill-level: 75%">
+          <span class="skill-card-icon" aria-hidden="true">☁️</span>
+          <div class="skill-card-name">DevOps & Cloud</div>
+          <p class="skill-card-desc">Docker, CI/CD, AWS & Vercel — deployment yang mulus dengan monitoring dan skalabilitas tinggi.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">75% Proficiency</div>
+        </div>
+
+        <div class="skill-card reveal" style="--skill-level: 88%">
+          <span class="skill-card-icon" aria-hidden="true">🎨</span>
+          <div class="skill-card-name">UI/UX Design</div>
+          <p class="skill-card-desc">Figma, prototyping & design systems — menciptakan pengalaman pengguna yang intuitif dan estetis.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">88% Proficiency</div>
+        </div>
+
+        <div class="skill-card reveal" style="--skill-level: 70%">
+          <span class="skill-card-icon" aria-hidden="true">🤖</span>
+          <div class="skill-card-name">AI Integration</div>
+          <p class="skill-card-desc">OpenAI API, LangChain, vector databases — mengintegrasikan kecerdasan buatan ke dalam produk nyata.</p>
+          <div class="skill-bar-wrap" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar"></div>
+          </div>
+          <div class="skill-level-text">70% Proficiency</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" aria-label="Projects">
+    <div class="section-container">
+      <p class="section-eyebrow reveal">Portofolio</p>
+      <h2 class="section-title reveal">Proyek<br/>Unggulan</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <div class="project-thumb-bg project-thumb-bg--blue" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="250" cy="140" r="80" stroke="#4de8d4" stroke-width="1" fill="none"/>
+                <circle cx="250" cy="140" r="120" stroke="#4de8d4" stroke-width="0.5" fill="none" stroke-dasharray="4 8"/>
+                <line x1="170" y1="140" x2="330" y2="140" stroke="#4de8d4" stroke-width="0.5"/>
+                <line x1="250" y1="60" x2="250" y2="220" stroke="#4de8d4" stroke-width="0.5"/>
+                <rect x="210" y="100" width="80" height="80" stroke="#c8a96e" stroke-width="1" fill="rgba(200,169,110,0.05)"/>
+              </svg>
+            </div>
+            <div class="project-thumb-overlay" aria-hidden="true"></div>
+            <span class="project-thumb-num" aria-hidden="true">01</span>
+            <span class="project-type-badge">Web App</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-name">E-Commerce Platform</h3>
+            <p class="project-desc">Platform belanja online dengan fitur real-time inventory, payment gateway, dan dashboard analytics yang komprehensif untuk penjual.</p>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">Stripe</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+            <a href="#" class="project-link">Lihat Project</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <div class="project-thumb-bg project-thumb-bg--purple" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="250,60 340,160 320,230 180,230 160,160" stroke="#4de8d4" stroke-width="1" fill="none"/>
+                <polygon points="250,90 320,165 305,215 195,215 180,165" stroke="#c8a96e" stroke-width="0.5" fill="rgba(200,169,110,0.03)"/>
+                <line x1="250" y1="60" x2="250" y2="230" stroke="#4de8d4" stroke-width="0.5" stroke-dasharray="4 4"/>
+              </svg>
+            </div>
+            <div class="project-thumb-overlay" aria-hidden="true"></div>
+            <span class="project-thumb-num" aria-hidden="true">02</span>
+            <span class="project-type-badge">Dashboard</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-name">AI Analytics Dashboard</h3>
+            <p class="project-desc">Dashboard analitik berbasis AI yang memproses data bisnis secara real-time dan memberikan insight otomatis menggunakan machine learning.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">TensorFlow</span>
+            </div>
+            <a href="#" class="project-link">Lihat Project</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <div class="project-thumb-bg project-thumb-bg--green" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="100" y="80" width="300" height="180" rx="8" stroke="#4de8d4" stroke-width="1" fill="none"/>
+                <rect x="120" y="100" width="120" height="60" rx="4" stroke="#c8a96e" stroke-width="0.5" fill="rgba(200,169,110,0.05)"/>
+                <line x1="260" y1="110" x2="380" y2="110" stroke="#4de8d4" stroke-width="0.5"/>
+                <line x1="260" y1="130" x2="360" y2="130" stroke="#4de8d4" stroke-width="0.5" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="project-thumb-overlay" aria-hidden="true"></div>
+            <span class="project-thumb-num" aria-hidden="true">03</span>
+            <span class="project-type-badge">Mobile App</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-name">Task Management App</h3>
+            <p class="project-desc">Aplikasi manajemen tugas kolaboratif dengan fitur real-time sync, notifikasi cerdas, dan integrasi dengan berbagai tools produktivitas.</p>
+            <div class="project-tags">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Redux</span>
+            </div>
+            <a href="#" class="project-link">Lihat Project</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <div class="project-thumb-bg project-thumb-bg--orange" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="250" cy="140" rx="150" ry="80" stroke="#4de8d4" stroke-width="1" fill="none"/>
+                <ellipse cx="250" cy="140" rx="100" ry="50" stroke="#c8a96e" stroke-width="0.5" fill="none"/>
+                <circle cx="250" cy="140" r="20" fill="rgba(77,232,212,0.2)" stroke="#4de8d4" stroke-width="1"/>
+                <line x1="100" y1="140" x2="400" y2="140" stroke="#4de8d4" stroke-width="0.5" stroke-dasharray="6 6"/>
+              </svg>
+            </div>
+            <div class="project-thumb-overlay" aria-hidden="true"></div>
+            <span class="project-thumb-num" aria-hidden="true">04</span>
+            <span class="project-type-badge">Open Source</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-name">UI Component Library</h3>
+            <p class="project-desc">Library komponen UI open-source dengan 50+ komponen yang dapat dikustomisasi, dilengkapi dokumentasi lengkap dan Storybook.</p>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Storybook</span>
+              <span class="project-tag">Tailwind</span>
+            </div>
+            <a href="#" class="project-link">Lihat Project</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" aria-label="Work experience">
+    <div class="section-container">
+      <p class="section-eyebrow reveal">Perjalanan</p>
+      <h2 class="section-title reveal">Pengalaman<br/>Profesional</h2>
+
+      <div class="timeline" role="list">
+
+        <div class="timeline-item reveal" role="listitem">
+          <time class="timeline-date" datetime="2022">2022 — Sekarang</time>
+          <div class="timeline-company">PT. Digital Nusantara</div>
+          <div class="timeline-role">Senior Full Stack Developer</div>
+          <p class="timeline-desc">Memimpin tim developer dalam membangun platform SaaS yang melayani lebih dari 50.000 pengguna aktif. Merancang arsitektur microservices dan mengimplementasikan pipeline CI/CD yang meningkatkan kecepatan deployment hingga 300%.</p>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <time class="timeline-date" datetime="2021">2021 — 2022</time>
+          <div class="timeline-company">Startup Fintech XYZ</div>
+          <div class="timeline-role">Frontend Developer</div>
+          <p class="timeline-desc">Membangun ulang antarmuka aplikasi mobile banking menggunakan React Native. Berhasil meningkatkan user retention sebesar 40% dan meraih rating 4.8 di Play Store melalui optimasi UX yang signifikan.</p>
+        </div>
+
+        <div class="timeline-item reveal" role="listitem">
+          <time class="timeline-date" datetime="2020">2020 — 2021</time>
+          <div class="timeline-company">Freelance & Open Source</div>
+          <div class="timeline-role">Web Developer</div>
+          <p class="timeline-desc">Mengerjakan lebih dari 15 proyek freelance untuk klien lokal dan internasional, serta berkontribusi aktif ke berbagai proyek open source populer di GitHub.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" aria-label="Contact">
+    <div class="section-container">
+      <div class="contact-inner">
+        <p class="section-eyebrow reveal" style="justify-content:center">Kontak</p>
+        <h2 class="section-title reveal">Mari Berkolaborasi</h2>
+        <p class="contact-desc reveal">
+          Punya proyek menarik atau ide yang ingin diwujudkan? Saya selalu terbuka untuk
+          diskusi dan kolaborasi baru. Jangan ragu untuk menghubungi saya!
+        </p>
+
+        <div class="reveal">
+          <a href="mailto:sahel30galipat@gmail.com" class="contact-email">sahel30galipat@gmail.com</a>
+        </div>
+
+        <div class="contact-links reveal">
+          <a href="https://github.com/ZahilKotaq" class="contact-link"><span aria-hidden="true">⌘</span> GitHub</a>
+          <a href="https://www.linkedin.com/in/sahil-satriyo-30729130b " class="contact-link"><span aria-hidden="true">◈</span> LinkedIn</a>
+          <a href="https://www.facebook.com/share/1CjXXC96dF/" class="contact-link"><span aria-hidden="true">◇</span> Facebook</a>
+          <a href="https://www.instagram.com/sahelsatriyo/" class="contact-link"><span aria-hidden="true">▷</span> Instagram</a>
+        </div>
+
+        <div class="reveal">
+          <a href="#" class="btn-primary btn-primary--lg">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="main-footer" role="contentinfo">
+    <div class="footer-logo">RES∿NANCE</div>
+    <p>© 2025 Nama Kamu — Designed & Built with ♥</p>
+    <p>PORTFOLIO · V 1.0.0</p>
+  </footer>
+
+  <!-- JavaScript: order matters — particles & cursor first, then scroll, then init -->
+  <script src="js/particles.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+  <script src="horizontal.js"></script>
+
+</body>
+</html>

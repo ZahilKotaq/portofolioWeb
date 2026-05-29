@@ -1,0 +1,169 @@
+/* ==========================================================
+   components.css — Reusable Components
+   Semua komponen yang dipakai di banyak section:
+   cursor, tombol, section header, divider, dll.
+   ========================================================== */
+
+
+/* ---- Custom Cursor ---- */
+#cursor-outer {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: var(--z-cursor);
+  width: 36px; height: 36px;
+  border: 1px solid var(--color-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width  var(--transition-normal),
+    height var(--transition-normal),
+    border-color var(--transition-normal);
+  mix-blend-mode: difference;
+}
+
+#cursor-inner {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: calc(var(--z-cursor) + 1);
+  width: 6px; height: 6px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s;
+}
+
+/* Cursor expands on interactive elements */
+#cursor-outer.is-hovered {
+  width: 56px;
+  height: 56px;
+  border-color: var(--color-gold);
+}
+
+
+/* ---- Buttons ---- */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-hud);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: none;
+  padding: 14px 36px;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: filter var(--transition-normal), transform var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  color: var(--color-bg-deepest);
+  background: linear-gradient(135deg, var(--color-cyan), #2ab8a8);
+  border: none;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--color-cyan-bright), var(--color-cyan));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+.btn-primary:hover { filter: brightness(1.2); transform: translateY(-2px); }
+.btn-primary:hover::before { opacity: 1; }
+
+/* Size modifier for large button */
+.btn-primary--lg { font-size: 0.75rem; padding: 16px 48px; }
+
+.btn-secondary {
+  color: var(--color-cyan);
+  background: transparent;
+  border: 1px solid var(--color-cyan);
+}
+.btn-secondary:hover {
+  background: rgba(77, 232, 212, 0.1);
+  transform: translateY(-2px);
+}
+
+
+/* ---- Section Shared ---- */
+section {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+.section-eyebrow {
+  font-family: var(--font-hud);
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--color-cyan);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---- Section Divider ---- */
+.section-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glass-border),
+    var(--color-cyan-dim),
+    var(--glass-border),
+    transparent
+  );
+}
+
+/* ---- Skill Tags (reused in About) ---- */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-tag {
+  font-family: var(--font-hud);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--color-cyan);
+  border: 1px solid var(--color-cyan-dim);
+  padding: 6px 16px;
+  text-transform: uppercase;
+  background: rgba(77, 232, 212, 0.05);
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+.skill-tag:hover {
+  background: rgba(77, 232, 212, 0.15);
+  border-color: var(--color-cyan);
+}
+
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .section-container { padding: var(--space-2xl) 30px; }
+}
