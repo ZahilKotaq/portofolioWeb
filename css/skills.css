@@ -1,123 +1,87 @@
-/* ==========================================================
-   skills.css — Skills / Resonance Section
-   ========================================================== */
-
-#skills { background: var(--color-bg-deep); }
-
-
-/* --- Grid --- */
-.skills-grid {
+/* ── Grid dan Layout Utama ── */
+.education-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  padding: 10px;
 }
 
-
-/* --- Card --- */
-.skill-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  padding: 36px 28px;
+/* ── Desain Kartu Pendidikan (Glassmorphism) ── */
+.education-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  text-decoration: none; /* Menghilangkan garis bawah tautan bawaan browser */
+  color: var(--text, #e8eaf6); /* Mengikuti variabel warna teksmu */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 24px) 0,
-    100% 24px,
-    100% 100%,
-    24px 100%,
-    0 calc(100% - 24px)
-  );
-  transition: border-color var(--transition-normal), transform var(--transition-normal);
 }
 
-/* Top-right chamfer triangle */
-.skill-card::before {
-  content: '';
-  position: absolute; top: 0; right: 0;
-  width: 0; height: 0;
-  border-style: solid;
-  border-width: 0 24px 24px 0;
-  border-color: transparent var(--color-cyan-dim) transparent transparent;
-  transition: border-color var(--transition-normal);
+/* ── Efek Hover saat Kartu Disorot ── */
+.education-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #00f2fe; /* Berikan warna cyan/gold khas portofoliomu */
+  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
 }
 
-/* Hover glow overlay */
-.skill-card::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(77, 232, 212, 0.06) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+/* ── Badge / Label Kategori ── */
+.education-badge {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #0f1117;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
-.skill-card:hover {
-  border-color: var(--color-cyan);
-  transform: translateY(-4px);
-}
-.skill-card:hover::before {
-  border-color: transparent var(--color-cyan) transparent transparent;
-}
-.skill-card:hover::after { opacity: 1; }
-
-
-/* --- Card Content --- */
-.skill-card-icon {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
-  display: block;
-}
-.skill-card-name {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+/* ── Detail Teks Instansi ── */
+.institution-name {
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--color-white);
-  margin-bottom: var(--space-xs) + 4px;
+  margin-bottom: 6px;
+  transition: color 0.3s;
 }
-.skill-card-desc {
+
+.education-card:hover .institution-name {
+  color: #00f2fe; /* Nama instansi berubah warna saat dihover */
+}
+
+.education-major {
+  font-size: 0.95rem;
+  color: rgba(232, 234, 246, 0.7);
+  margin-bottom: 12px;
+}
+
+.education-year {
   font-size: 0.85rem;
-  line-height: 1.8;
-  color: var(--color-white-dim);
+  color: rgba(232, 234, 246, 0.4);
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
-
-/* --- Skill Bar --- */
-.skill-bar-wrap {
-  background: rgba(255, 255, 255, 0.05);
-  height: 2px;
-  border-radius: 1px;
-  overflow: hidden;
-}
-.skill-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-cyan-dim), var(--color-cyan));
-  border-radius: 1px;
-  width: 0;                     /* starts at 0, animated to --skill-level */
-  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-  box-shadow: 0 0 8px var(--color-cyan);
+/* ── Petunjuk Tautan di Bawah Kartu ── */
+.visit-link {
+  font-size: 0.85rem;
+  color: #00f2fe;
+  font-weight: 600;
+  margin-top: auto; /* Memaksa tulisan ini berada di paling bawah kartu */
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Triggered by JS when card enters viewport */
-.skill-card.visible .skill-bar {
-  width: var(--skill-level);
-}
-
-.skill-level-text {
-  font-family: var(--font-hud);
-  font-size: 0.55rem;
-  letter-spacing: 0.1em;
-  color: var(--color-cyan-dim);
-  margin-top: 6px;
-  text-align: right;
-}
-
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .skills-grid { grid-template-columns: 1fr; }
+.education-card:hover .visit-link {
+  opacity: 1;
+  transform: translateX(5px);
 }
