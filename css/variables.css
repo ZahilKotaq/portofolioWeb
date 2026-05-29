@@ -11,12 +11,12 @@
   --color-bg-navy:     #071525;
   --color-bg-teal:     #0a1e2e;
 
-  --color-cyan:        #4de8d4;
-  --color-cyan-bright: #00fff0;
-  --color-cyan-dim:    #1a6b63;
+  --color-cyan:        #44A3DF;
+  --color-cyan-bright: #FFB834;
+  --color-cyan-dim:    #1F2235;
 
-  --color-gold:        #c8a96e;
-  --color-gold-bright: #f0d080;
+  --color-gold:        #8A909A;
+  --color-gold-bright: #FFFFFF;
 
   --color-white:       #e8f4f8;
   --color-white-dim:   #a0c4cc;
@@ -24,7 +24,7 @@
   /* --- Glassmorphism --- */
   --glass-bg:          rgba(4, 20, 35, 0.6);
   --glass-bg-hover:    rgba(4, 30, 50, 0.8);
-  --glass-border:      rgba(77, 232, 212, 0.15);
+  --glass-border:      rgba(89, 126, 226, 0.849);
 
   /* --- Typography --- */
   --font-display: 'Cinzel', serif;

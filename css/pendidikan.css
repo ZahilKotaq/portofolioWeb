@@ -55,7 +55,7 @@
 }
 
 .education-card:hover .institution-name {
-  color: #00f2fe; /* Nama instansi berubah warna saat dihover */
+  color: #0098fe; /* Nama instansi berubah warna saat dihover */
 }
 
 .education-major {
@@ -74,7 +74,7 @@
 /* ── Petunjuk Tautan di Bawah Kartu ── */
 .visit-link {
   font-size: 0.85rem;
-  color: #00f2fe;
+  color: #0098fe;
   font-weight: 600;
   margin-top: auto; /* Memaksa tulisan ini berada di paling bawah kartu */
   opacity: 0.6;

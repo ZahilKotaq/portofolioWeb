@@ -23,7 +23,7 @@
   font-weight: 700;
   letter-spacing: 0.3em;
   color: var(--color-cyan);
-  text-shadow: 0 0 20px rgba(77, 232, 212, 0.6);
+  text-shadow: 0 0 20px rgba(77, 100, 232, 0.6);
 }
 .nav-logo span {
   color: var(--color-gold);
@@ -95,5 +95,52 @@
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
+  }
+}
+
+/* ==========================================================
+   FLOATING MASCOT
+   ========================================================== */
+
+.mascot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: var(--z-nav); /* Agar selalu berada di atas konten lain */
+  width: 150px; /* Atur ukuran di sini */
+  animation: floatMascot 3s ease-in-out infinite; /* Animasi melayang terus-menerus */
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+}
+
+/* Efek saat kursor diarahkan ke maskot (membesar sedikit) */
+.mascot-container:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.mascot-img {
+  width: 100%;
+  height: auto;
+  /* Memberikan efek bayangan menyala warna cyan khas tema kamu */
+  filter: drop-shadow(0 10px 15px rgba(77, 232, 212, 0.4));
+}
+
+/* Kunci Animasi Melayang */
+@keyframes floatMascot {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Bergerak ke atas 15px */
+  }
+}
+
+/* Mengecilkan maskot di layar HP agar tidak menutupi teks */
+@media (max-width: 600px) {
+  .mascot-container {
+    width: 90px;
+    bottom: 10px;
+    right: 10px;
   }
 }
