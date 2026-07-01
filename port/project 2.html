@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Calculator</title>
+  <link rel="stylesheet" href="../css/project1.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS: Design tokens & Base -->
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+
+  <!-- CSS: Shared Components -->
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+    
+  <!-- Noise Overlay -->
+  <div id="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-outer" aria-hidden="true"></div>
+  <div id="cursor-inner" aria-hidden="true"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo">Zahil<span>∿</span>Kotaq</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Kembali ke Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- JavaScript: order matters — particles & cursor first, then scroll, then init -->
+  <script src="../JS/particles.js"></script>
+  <script src="../JS/cursor.js"></script>
+  <script src="../JS/scroll.js"></script>
+  <script src="../JS/main.js"></script>
