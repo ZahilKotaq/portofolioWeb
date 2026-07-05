@@ -97,7 +97,37 @@
     text-align: center;
   }
 }
+.lang-switcher {
+  background: var(--glass-bg);
+  border: 1px solid var(--color-cyan-dim);
+  color: var(--color-cyan);
+  font-family: var(--font-hud);
+  font-size: 0.65rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-normal);
+  margin-left: var(--space-md);
+}
 
+.lang-switcher:hover {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(77, 232, 212, 0.2);
+}
+
+.lang-switcher option {
+  background: var(--color-bg-deepest);
+  color: var(--color-cyan);
+}
+
+@media (max-width: 900px) {
+  .lang-switcher {
+    margin-left: 0;
+  }
+}
 /* ==========================================================
    FLOATING MASCOT
    ========================================================== */
